@@ -14,10 +14,10 @@ namespace Task_2._2
     {
         static void Main(string[] args)
         {
-            decimal a = 901230.000400012019m;
+            decimal a = 901230.004012019m;
 
             Console.WriteLine($"Число: {a}");
-            Console.WriteLine($"Его длина: {NumberLenght(a)}");
+            Console.WriteLine($"Количество цифр в числе: {NumberLenght(a)}");
         }
 
         static int NumberLenght(decimal number)
@@ -26,7 +26,7 @@ namespace Task_2._2
 
             long longNumber = (long)number;
 
-            // Выносит цифры числа за запятую. Делает из decimal - long
+            // Делает из дробного числа целое.
             while (longNumber != number)
             {
                 number *= 10;
