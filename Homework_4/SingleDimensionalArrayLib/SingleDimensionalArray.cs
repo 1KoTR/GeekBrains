@@ -19,7 +19,7 @@ using System.Text;
 
 namespace Task_4._3
 {
-    class SingleDimensionalArray
+    public class SingleDimensionalArray
     {
         private int[] SDArray;
 
@@ -38,30 +38,38 @@ namespace Task_4._3
         /// </summary>
         public int MaxCount 
         {
-            get 
-            {
-                int count = 0;
-                foreach (var number in SDArray)
-                    if (number == MaxValue)
-                        count++;
-                return count;
-            } 
+            get { return AmountOfElements[MaxValue]; } 
         }
         /// <summary>
         /// Наибольшее число.
         /// </summary>
-        public int MaxValue
+        public int MaxValue 
         {
-            get
+            get 
             {
-                int max = 0;
+                int max = int.MinValue;
                 foreach (var number in SDArray)
                     if (max < number)
                         max = number;
                 return max;
+            } 
+        }
+        /// <summary>
+        /// Возвращает количество элементов массива, равных заданному числу.
+        /// </summary>
+        public Dictionary<int, int> AmountOfElements
+        {
+            get 
+            {
+                var elements = new Dictionary<int, int>();
+                foreach (var number in SDArray)
+                    if (elements.ContainsKey(number))
+                        elements[number]++;
+                    else
+                        elements.Add(number, 1);
+                return elements; 
             }
         }
-
 
         /// <summary>
         /// Создаёт одномерный массив и заполняет его числами от начального значения с заданным шагом.
@@ -114,8 +122,6 @@ namespace Task_4._3
                 array[i] = -SDArray[i];
             return array;
         }
-
-
 
         public override string ToString()
         {
