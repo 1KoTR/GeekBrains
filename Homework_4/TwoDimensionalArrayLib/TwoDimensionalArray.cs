@@ -37,6 +37,10 @@ namespace TwoDimensionalArrayLib
         /// </summary>
         public int Column { get; }
         /// <summary>
+        /// Длина массива.
+        /// </summary>
+        public int Length { get; }
+        /// <summary>
         /// Максимальное число.
         /// </summary>
         public int MaxValue
@@ -78,6 +82,7 @@ namespace TwoDimensionalArrayLib
 
             Row = row;
             Column = column;
+            Length = row * column;
         }
 
         /// <summary>
@@ -86,7 +91,7 @@ namespace TwoDimensionalArrayLib
         /// <param name="row">Количество рядов.</param>
         /// <param name="column">Количество столбцов.</param>
         /// <param name="num">Заданное число.</param>
-        public TwoDimensionalArray(int row, int column, int num = 0) : this(row, column)
+        public TwoDimensionalArray(int row, int column, int num = 0): this(row, column)
         {
             for (int i = 0; i < Row; i++)
                 for (int j = 0; j < Column; j++)
@@ -101,7 +106,7 @@ namespace TwoDimensionalArrayLib
         /// <param name="column">Количество столбцов.</param>
         /// <param name="min">Минимальное число диапозона.</param>
         /// <param name="max">Максимально число диапозона.</param>
-        public TwoDimensionalArray(int row, int column, int min, int max) : this(row, column)
+        public TwoDimensionalArray(int row, int column, int min, int max): this(row, column)
         {
             Random rnd = new Random();
             for (int i = 0; i < Row; i++)
@@ -115,7 +120,7 @@ namespace TwoDimensionalArrayLib
         /// <param name="row">Количество рядов.</param>
         /// <param name="column">Количество столбцов.</param>
         /// <param name="path">Путь к файлу.</param>
-        public TwoDimensionalArray(int row, int column, string path) : this(row, column)
+        public TwoDimensionalArray(int row, int column, string path): this(row, column)
         {
             LoadFrom(path);
         }
@@ -171,30 +176,38 @@ namespace TwoDimensionalArrayLib
         }
 
         /// <summary>
-        /// Сохраняет массив в файл в виде строки или таблицы. 
+        /// Сохраняет массив в файл в виде таблицы. 
         /// </summary>
         /// <param name="path">Путь к файлу.</param>
-        /// <param name="inLine">Формат сохранения.</param>
         public void SaveTo(string path)
         {
             File.WriteAllText(path, ToString());
         }
 
+        /// <summary>
+        /// Загружает массив из файла.
+        /// </summary>
+        /// <param name="path">Путь к файлу.</param>
         public void LoadFrom(string path)
         {
             if (!File.Exists(path))
                 throw new FileNotFoundException("Файл не найден по заданному пути.");
 
-            string[] strNums = File.ReadAllText(path).Split();
+            string[] strNums = File.ReadAllText(path).Trim().Replace("\n", "").Split();
 
-            int[] nums = new int[strNums.Length];
-            for (int i = 0; i < nums.Length; i++)
-            {
-                string strNum = strNums[i];
-                if (!int.TryParse(strNum, out int num))
-                    throw new FormatException("Неккоректное значение в файле.");
-                nums[i] = num;
-            }
+            int[] nums = new int[Length];
+            for (int i = 0; i < Length; i++)
+                if (i < strNums.Length)
+                    if (int.TryParse(strNums[i], out int num))
+                        nums[i] = num;
+                    else
+                        throw new FormatException("Неккоректное значение в файле.");
+                else
+                    nums[i] = 0;
+
+            for (int i = 0, n = 0; i < Row; i++)
+                for (int j = 0; j < Column; j++, n++)
+                    TDArray[i, j] = nums[n];
         }
 
         public override string ToString()
@@ -203,7 +216,7 @@ namespace TwoDimensionalArrayLib
             for (int i = 0; i < TDArray.GetLength(0); i++)
             {
                 for (int j = 0; j < TDArray.GetLength(1); j++)
-                    text += $"{TDArray[i, j], 6}";
+                    text += $"{TDArray[i, j]} ";
                 text += "\n";
             }
             return text;

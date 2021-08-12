@@ -25,17 +25,26 @@ namespace Task_4._5
         {
             TwoDimensionalArray myArray = new TwoDimensionalArray(row: 5, column: 10, min: -100, max: 101);
 
-            Console.WriteLine("Начальная матрица: ");
+            Console.WriteLine("Начальный массив: ");
             Console.WriteLine(myArray);
 
-            myArray.SaveTo("myArray.txt");
+            myArray.SaveTo("myArray1.txt");
 
+            Console.WriteLine($"Длина массива: {myArray.Length}");
+            Console.WriteLine();
             Console.WriteLine($"Минимальное число: {myArray.MinValue}");
             Console.WriteLine($"Максимальное число: {myArray.MaxValue}");
             Console.WriteLine();
             Console.WriteLine($"Индекс числа {myArray.MaxValue}: {myArray.IndexOfNumber(myArray.MaxValue)}");
             Console.WriteLine();
             Console.WriteLine($"Сумма чисел, которые больше 50: {myArray.Sum(50)}");
+            Console.WriteLine();
+
+            var myArrrayFromFile = new TwoDimensionalArray(row: 6, column: 15);
+            myArrrayFromFile.LoadFrom("myArray.txt");
+
+            Console.WriteLine("Массив из файла: ");
+            Console.WriteLine(myArrrayFromFile);
         }
     }
 }
