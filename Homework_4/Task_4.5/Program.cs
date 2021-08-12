@@ -35,7 +35,8 @@ namespace Task_4._5
             Console.WriteLine($"Минимальное число: {myArray.MinValue}");
             Console.WriteLine($"Максимальное число: {myArray.MaxValue}");
             Console.WriteLine();
-            Console.WriteLine($"Индекс числа {myArray.MaxValue}: {myArray.IndexOfNumber(myArray.MaxValue)}");
+            Console.WriteLine($"Индекс числа {myArray.MaxValue}: {myArray.IndexOfNumber(myArray.MaxValue, out int index)}");
+            Console.WriteLine($"Индекс числа {myArray.MaxValue}: {index}");
             Console.WriteLine();
             Console.WriteLine($"Сумма чисел, которые больше 50: {myArray.Sum(50)}");
             Console.WriteLine();

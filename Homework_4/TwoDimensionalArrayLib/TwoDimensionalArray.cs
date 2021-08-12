@@ -150,15 +150,15 @@ namespace TwoDimensionalArrayLib
         /// </summary>
         /// <param name="num">Число.</param>
         /// <returns>Возвращает индекс заданного числа. Если число не было найдено, то возвращает -1.</returns>
-        public int IndexOfNumber(int num)
+        public int IndexOfNumber(int num, out int index)
         {
-            int index = 0;
+            index = 0;
             foreach (var n in TDArray)
                 if (num != n)
                     index++;
                 else
                     break;
-            return index >= TDArray.Length ? -1 : index;
+            return index = index >= TDArray.Length ? -1 : index;
         }
 
         /// <summary>
