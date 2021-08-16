@@ -49,13 +49,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_4.2", "Homework_4\Task
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_4.3", "Homework_4\Task_4.3\Task_4.3.csproj", "{57A4CFA4-BFAE-4EBF-A41D-CE685079A678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingleDimensionalArrayLib", "Homework_4\SingleDimensionalArrayLib\SingleDimensionalArrayLib.csproj", "{F40BF010-0F67-4F10-9730-AC47DBADDF0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleDimensionalArrayLib", "Homework_4\SingleDimensionalArrayLib\SingleDimensionalArrayLib.csproj", "{F40BF010-0F67-4F10-9730-AC47DBADDF0A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_4.4", "Homework_4\Task_4.4\Task_4.4.csproj", "{2AE342C1-0E9B-41EA-AA95-A627E0EFD6E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_4.4", "Homework_4\Task_4.4\Task_4.4.csproj", "{2AE342C1-0E9B-41EA-AA95-A627E0EFD6E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_4.5", "Homework_4\Task_4.5\Task_4.5.csproj", "{6C2F5275-746C-495E-8D49-956336A7B401}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_4.5", "Homework_4\Task_4.5\Task_4.5.csproj", "{6C2F5275-746C-495E-8D49-956336A7B401}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TwoDimensionalArrayLib", "Homework_4\TwoDimensionalArrayLib\TwoDimensionalArrayLib.csproj", "{8270BF50-D35E-4505-9949-E2F0C7BF99B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TwoDimensionalArrayLib", "Homework_4\TwoDimensionalArrayLib\TwoDimensionalArrayLib.csproj", "{8270BF50-D35E-4505-9949-E2F0C7BF99B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Homework_5", "Homework_5", "{A6258650-AC50-487D-9865-0ECFD3D3AD7C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Task_5.1", "Homework_5\Task_5.1\Task_5.1.csproj", "{716E6DFD-F26C-42CE-860E-03C815179302}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task_5.2", "Homework_5\Task_5.2\Task_5.2.csproj", "{2615C991-C5A6-4329-BB80-C0F399102AB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -155,6 +161,14 @@ Global
 		{8270BF50-D35E-4505-9949-E2F0C7BF99B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8270BF50-D35E-4505-9949-E2F0C7BF99B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8270BF50-D35E-4505-9949-E2F0C7BF99B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{716E6DFD-F26C-42CE-860E-03C815179302}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{716E6DFD-F26C-42CE-860E-03C815179302}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{716E6DFD-F26C-42CE-860E-03C815179302}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{716E6DFD-F26C-42CE-860E-03C815179302}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2615C991-C5A6-4329-BB80-C0F399102AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2615C991-C5A6-4329-BB80-C0F399102AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2615C991-C5A6-4329-BB80-C0F399102AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2615C991-C5A6-4329-BB80-C0F399102AB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,6 +197,8 @@ Global
 		{2AE342C1-0E9B-41EA-AA95-A627E0EFD6E9} = {2D58E049-C1C2-4485-B62E-3A4091961189}
 		{6C2F5275-746C-495E-8D49-956336A7B401} = {2D58E049-C1C2-4485-B62E-3A4091961189}
 		{8270BF50-D35E-4505-9949-E2F0C7BF99B8} = {2D58E049-C1C2-4485-B62E-3A4091961189}
+		{716E6DFD-F26C-42CE-860E-03C815179302} = {A6258650-AC50-487D-9865-0ECFD3D3AD7C}
+		{2615C991-C5A6-4329-BB80-C0F399102AB5} = {A6258650-AC50-487D-9865-0ECFD3D3AD7C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69D50F80-CD0B-43FE-847F-B7317319A751}
