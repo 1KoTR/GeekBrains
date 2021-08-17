@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 
 /* Чечулин Денис
  *  
- * 1. 
+ * 2. 
  * 
  * Разработать статический класс Message, содержащий следующие статические методы для обработки текста:
  * а) Вывести только те слова сообщения, которые содержат не более n букв. + 
@@ -14,7 +14,7 @@ using System.Text.RegularExpressions;
  * г) Сформировать строку с помощью StringBuilder из самых длинных слов сообщения. + 
  * д) ***Создать метод, который производит частотный анализ текста. 
  *    В качестве параметра в него передается массив слов и текст, в качестве результата метод возвращает сколько раз каждое из слов массива входит в этот текст. 
- *    Здесь требуется использовать класс Dictionary.
+ *    Здесь требуется использовать класс Dictionary. +
  * 
  */
 
@@ -104,7 +104,7 @@ namespace Task_5._2
         /// <param name="text">Текст.</param>
         /// <param name="words">Массив слов.</param>
         /// <returns>Возвращает словарь с количеством слов.</returns>
-        public static Dictionary<string, int> AmountsOfWords(string text, string[] words)
+        public static Dictionary<string, int> AmountsOfWords(string text, string[] words)  // Д)
         {
             string[] tWords = SimplifyText(text).ToLower().Split();
 
