@@ -1,6 +1,4 @@
-﻿using System;
-
-/* Чечулин Денис
+﻿/* Чечулин Денис
  *  
  * 1. 
  * 
@@ -10,30 +8,14 @@
 
 namespace Task_8._1
 {
-    interface IReflection
-    {
-        void Serialize();
-        void Deserialize();
-    }
-
-    class Reflection : IReflection
-    {
-        public void Serialize()
-        {
-
-        }
-
-        public void Deserialize()
-        {
-            throw new Exception("Не лезь сюда!");
-        }
-    }
-
     class Program
     {
         static void Main(string[] args)
         {
-
+            var application = new Application();
+            var reflector = new Reflector();
+            application.Run(reflector);
+            application.Stop();
         }
     }
 }
