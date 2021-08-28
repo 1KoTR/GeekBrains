@@ -1,13 +1,17 @@
 ﻿using System.Collections.Generic;
 using System.IO;
-using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace Task_8._3
 {
     class DataBase
     {
-        string FileName;
-        List<Question> Questions;
+        private List<Question> Questions;
+
+        /// <summary>
+        /// Имя файла с данными.
+        /// </summary>
+        public string FileName { get; }
 
         /// <summary>
         /// Количество вопросов.
@@ -20,13 +24,13 @@ namespace Task_8._3
         public Question this[int index]
         {
             get { return Questions[index]; }
-            set { Questions[index] = value; }
         }
 
         public DataBase(string fileName)
         {
             FileName = fileName;
             Questions = new List<Question>();
+            Add("", false);
         }
 
         /// <summary>
@@ -34,7 +38,6 @@ namespace Task_8._3
         /// </summary>
         /// <param name="text">текст вопроса.</param>
         /// <param name="answer">Ответ на вопрос.</param>
-        /// <param name="page">Страница с вопросом.</param>
         public void Add(string text, bool answer)
         {
             Questions.Add(new Question(text, answer));
@@ -46,7 +49,7 @@ namespace Task_8._3
         /// <param name="index"></param>
         public void Remove(int page)
         {
-            Questions.RemoveAt(--page);
+            Questions.RemoveAt(page);
         }
 
         /// <summary>
@@ -54,17 +57,17 @@ namespace Task_8._3
         /// </summary>
         public void Save()
         {
-            using (var fStream = new FileStream(FileName, FileMode.OpenOrCreate, FileAccess.ReadWrite))
-                new XmlSerializer(typeof(List<Question>)).Serialize(fStream, Questions);
+            var json = JsonConvert.SerializeObject(Questions);
+            File.WriteAllText(FileName, json);
         }
 
         /// <summary>
-        /// Загружает список вопросов.
+        /// Загружает список вопросов из файла.
         /// </summary>
         public void Load()
         {
-            using (var fStream = new FileStream(FileName, FileMode.Create, FileAccess.Write))
-                Questions = (List<Question>)new XmlSerializer(typeof(List<Question>)).Deserialize(fStream);
+            Questions = JsonConvert.DeserializeObject<List<Question>>(File.ReadAllText(FileName));
+            
         }
     }
 }

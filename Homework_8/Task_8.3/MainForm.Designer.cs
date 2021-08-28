@@ -36,7 +36,6 @@ namespace Task_8._3
             this.miSaveFile = new System.Windows.Forms.ToolStripMenuItem();
             this.txtBox = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             this.cBoxAnswer = new System.Windows.Forms.CheckBox();
             this.nudPage = new System.Windows.Forms.NumericUpDown();
             this.tsPanel.SuspendLayout();
@@ -74,14 +73,14 @@ namespace Task_8._3
             // miNewFile
             // 
             this.miNewFile.Name = "miNewFile";
-            this.miNewFile.Size = new System.Drawing.Size(140, 22);
+            this.miNewFile.Size = new System.Drawing.Size(180, 22);
             this.miNewFile.Text = "Новый";
             this.miNewFile.Click += new System.EventHandler(this.MiNewFile_Click);
             // 
             // miOpenFile
             // 
             this.miOpenFile.Name = "miOpenFile";
-            this.miOpenFile.Size = new System.Drawing.Size(140, 22);
+            this.miOpenFile.Size = new System.Drawing.Size(180, 22);
             this.miOpenFile.Text = "Открыть";
             this.miOpenFile.Click += new System.EventHandler(this.MiOpenFile_Click);
             // 
@@ -89,7 +88,7 @@ namespace Task_8._3
             // 
             this.miSaveFile.Enabled = false;
             this.miSaveFile.Name = "miSaveFile";
-            this.miSaveFile.Size = new System.Drawing.Size(140, 22);
+            this.miSaveFile.Size = new System.Drawing.Size(180, 22);
             this.miSaveFile.Text = "Сохранить";
             this.miSaveFile.Click += new System.EventHandler(this.MiSaveFile_Click);
             // 
@@ -116,19 +115,6 @@ namespace Task_8._3
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.Enabled = false;
-            this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.btnRemove.Location = new System.Drawing.Point(102, 220);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(84, 29);
-            this.btnRemove.TabIndex = 3;
-            this.btnRemove.Text = "Удалить";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.BtnRemove_Click);
             // 
             // cBoxAnswer
             // 
@@ -177,7 +163,6 @@ namespace Task_8._3
             this.ClientSize = new System.Drawing.Size(418, 256);
             this.Controls.Add(this.nudPage);
             this.Controls.Add(this.cBoxAnswer);
-            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.txtBox);
             this.Controls.Add(this.tsPanel);
@@ -208,7 +193,6 @@ namespace Task_8._3
         private System.Windows.Forms.ToolStripMenuItem miOpenFile;
         private System.Windows.Forms.ToolStripMenuItem miSaveFile;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Button btnRemove;
         private System.Windows.Forms.CheckBox cBoxAnswer;
         private System.Windows.Forms.NumericUpDown nudPage;
     }
