@@ -8,24 +8,30 @@ public class ExecuteTwoTasks : MonoBehaviour
 {
     private void Start()
     {
-        var cts = new CancellationTokenSource();
-        var plugToken = cts.Token;
+        using var cts = new CancellationTokenSource();
+        var ct = cts.Token;
 
-        Task1(plugToken);
-        Task2(plugToken);
+        Task1(ct);
+        Task2(ct);
     }
 
-    private async void Task1(CancellationToken token)
+    public async void Task1(CancellationToken ct)
     {
-        await Task.Delay(2000);
+        await Task.Delay(1000);
+        if (ct.IsCancellationRequested)
+            return;
 
         print("Task1 completed");
     }
 
-    private async void Task2(CancellationToken token)
+    public async void Task2(CancellationToken ct)
     {
         for (int i = 0; i < 60; i++)
+        {
+            if (ct.IsCancellationRequested)
+                return;
             await Task.Yield();
+        }
 
         print("Task2 completed");
     }
