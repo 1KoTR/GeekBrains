@@ -22,7 +22,7 @@ public class Unit : MonoBehaviour
 
     public void ReceiveHealing()
     {
-        if (_isHealing)
+        if (_isHealing || _health == _maxHealth)
             return;
 
         _isHealing = true;

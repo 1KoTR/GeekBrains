@@ -15,7 +15,7 @@ public class ExecuteTwoTasks : MonoBehaviour
         Task2(ct);
     }
 
-    public async void Task1(CancellationToken ct)
+    public async Task Task1(CancellationToken ct)
     {
         await Task.Delay(1000);
         if (ct.IsCancellationRequested)
@@ -24,7 +24,7 @@ public class ExecuteTwoTasks : MonoBehaviour
         print("Task1 completed");
     }
 
-    public async void Task2(CancellationToken ct)
+    public async Task Task2(CancellationToken ct)
     {
         for (int i = 0; i < 60; i++)
         {
